@@ -25,7 +25,7 @@ Route::resource('genres', GenreController::class,)->only(['index', 'show']);
 Route::resource('books', BookController::class)->only(['index', 'show']);
 Route::resource('authors', AuthorController::class)->only(['index', 'show']);
 
-Route::name('admin.')->prefix('admin')->group(function ()
+Route::name('admin.')->middleware('auth.basic.once')->prefix('admin')->group(function ()
 {
     Route::resources([
         'genres' => AdminGenreController::class,
@@ -34,7 +34,6 @@ Route::name('admin.')->prefix('admin')->group(function ()
     ]);
 });
 
-// ->middleware('auth.basic.once')
 
 
 
