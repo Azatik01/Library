@@ -13,7 +13,7 @@ class AuthorController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function index()
     {
@@ -24,7 +24,7 @@ class AuthorController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function create()
     {
@@ -35,7 +35,7 @@ class AuthorController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(AuthorsRequest $request)
     {
@@ -55,7 +55,7 @@ class AuthorController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Author  $author
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function show(Author $author)
     {
@@ -66,11 +66,10 @@ class AuthorController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Author  $author
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function edit(Author $author)
     {
-        //dd($author->first_name);
         return view('admin.authors.edit', compact('author'));
     }
 
@@ -99,7 +98,7 @@ class AuthorController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Author  $author
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Author $author)
     {

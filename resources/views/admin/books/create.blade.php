@@ -6,7 +6,7 @@
             @csrf
             <div class="form-group">
                 <label for="name">Наименование</label>
-                <input type="text" class="form-control" name="name" >
+                <input type="text" class="form-control" name="name" value="{{old('name')}}">
                 @error('name')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label for="last_name">Описание</label>
-                <textarea class="form-control" name="description"></textarea>
+                <textarea class="form-control" name="description">{{old('description')}}</textarea>
                 @error('description')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
@@ -53,7 +53,7 @@
             </div>
             <div class="form-group">
                 <label for="name">Цена</label>
-                <input type="number" class="form-control" name="price" >
+                <input type="number" class="form-control" name="price" value="{{old('price')}}">
                 @error('price')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror

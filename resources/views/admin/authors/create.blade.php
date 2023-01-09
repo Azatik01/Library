@@ -6,21 +6,21 @@
             @csrf
             <div class="form-group">
                 <label for="first_name">Имя</label>
-                <input type="text" class="form-control @error('first_name') is-invalid @enderror" id="first_name" name="first_name" >
+                <input type="text" class="form-control @error('first_name') is-invalid @enderror" id="first_name" name="first_name" value="{{old('first_name')}}" >
                 @error('first_name')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="last_name">Фамилия</label>
-                <input type="text" class="form-control @error('last_name') is-invalid @enderror" id="last_name" name="last_name" >
+                <input type="text" class="form-control @error('last_name') is-invalid @enderror" id="last_name" name="last_name" value="{{old('last_name')}}" >
                 @error('last_name')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group">
                 <label for="last_name">Описание</label>
-                <textarea class="form-control" name="description"></textarea>
+                <textarea class="form-control" name="description">{{old('description')}}</textarea>
                 @error('description')
                 <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
