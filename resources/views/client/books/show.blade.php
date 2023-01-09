@@ -1,6 +1,18 @@
 @extends('layouts.client')
 @section('content')
     <div class="container">
+        <h3><a href="{{route('books.index')}}">Главная ></a>
+            @foreach($genres as $genre)
+            <a href="{{route('genres.show', ['genre' => $genre])}}">
+                @foreach($book->genres as $bg)
+                    @if($bg->id == $genre->id)
+                {{$genre->name}} >
+                    @endif
+                @endforeach
+            </a>
+            @endforeach
+        {{$book->name}}
+        </h3>
         <h2> Автор:
             @foreach($authors as $author)
                 <a href="{{route('authors.show', ['author' => $author])}}">

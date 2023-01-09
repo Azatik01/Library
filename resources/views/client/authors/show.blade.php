@@ -1,6 +1,7 @@
 @extends('layouts.client')
 @section('content')
     <div class="container pt-5">
+        <h3><a href="{{route('authors.index')}}">Главная ></a> {{$author->first_name}} {{$author->last_name}}</h3>
         <h2 class="text-warning">{{$author->first_name}} {{$author->last_name}}</h2>
         <div class="card mb-3">
             @if(!is_null($author->picture))
@@ -24,7 +25,7 @@
             <div class="card mx-5 mt-3" style="width: 18rem; display: inline-block">
                 <div class="card-body">
                     @if(!is_null($book->picture))
-                        <img class="card-img-top" src="{{asset('storage/' . $book->picture)}}"
+                        <img class="card-img-top" height="300px" src="{{asset('storage/' . $book->picture)}}"
                              alt="{{$book->picture}}">
                     @else
                         <h2>Фото не загружено</h2>
