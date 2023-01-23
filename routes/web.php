@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\GenreController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AuthorController as AdminAuthorController;
@@ -25,8 +26,7 @@ Route::resource('genres', GenreController::class,)->only(['index', 'show']);
 Route::resource('books', BookController::class)->only(['index', 'show']);
 Route::resource('authors', AuthorController::class)->only(['index', 'show']);
 
-Route::name('admin.')->middleware('auth.basic.once')
-    ->prefix('admin')->group(function ()
+Route::name('admin.')->prefix('admin')->group(function ()
 {
     Route::resources([
         'genres' => AdminGenreController::class,
@@ -35,7 +35,11 @@ Route::name('admin.')->middleware('auth.basic.once')
     ]);
 });
 
+Route::resource('books.comments',
+            CommentController::class)
+            ->only(['store']);
 
+// ->middleware('auth.basic.once')
 
 
 

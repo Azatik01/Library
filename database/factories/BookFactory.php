@@ -25,7 +25,7 @@ class BookFactory extends Factory
             'picture' => $this->getImage(rand(1,4)),
             'description' => $this->faker->paragraph(),
             'author_id' => rand(1,4),
-            'price' => $this->faker->randomNumber()
+            'price' => rand(150, 3000)
         ];
     }
 

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <div class="container mt-5">
-        <h1 class="text-center pb-3">Изменить автора</h1>
+        <h1 class="text-center pb-3">Изменить жанр</h1>
         <form action="{{ route('admin.genres.update', ['genre' => $genre]) }}" method="post" enctype="multipart/form-data">
             @method('put')
             @csrf

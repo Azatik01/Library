@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <div class="container mt-5">
-        <h1 class="text-center pb-3">Добавить жанр</h1>
+        <h1 class="text-center pb-3">Изменить книгу</h1>
         <form action="{{ route('admin.books.update', ['book' => $book])}}" method="post" enctype="multipart/form-data">
             @method('put')
             @csrf
@@ -45,7 +45,7 @@
                 <label for="author_id">Жанр</label>
                 @foreach($genres as $genre)
                     <div>
-                        <input type="checkbox" id="scales" name="genre_id[]" checked value="{{$genre->id}}">
+                        <input type="checkbox" id="scales" name="genre_id[]" value="{{$genre->id}}">
                         <label for="scales">{{$genre->name}}</label>
                     </div>
                 @endforeach
