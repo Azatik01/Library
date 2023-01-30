@@ -15,7 +15,7 @@ class Book extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'picture', 'description','author_id', 'price'];
+    protected $fillable = ['name', 'picture', 'description','author_id', 'price', 'user_id'];
 
 
     public function genres()
@@ -31,5 +31,10 @@ class Book extends Model
     public function author()
     {
         return $this->belongsTo(Author::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.client')
+@extends('layouts.app')
 @section('content')
     <h1 class="text-center">Жанры</h1>
     <div class="container overflow-hidden text-center mt-5">

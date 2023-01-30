@@ -1,4 +1,4 @@
-@extends('layouts.client')
+@extends('layouts.app')
 @section('content')
     <div class="container pt-5">
         <h3><a href="{{route('authors.index')}}">Главная ></a> {{$author->first_name}} {{$author->last_name}}</h3>
