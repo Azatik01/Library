@@ -24,7 +24,7 @@ use App\Http\Controllers\Admin\GenreController as AdminGenreController;
 Route::get('/', [GenreController::class, 'index'])->middleware(['auth']);
 
 Route::resource('genres', GenreController::class,)->middleware(['auth'])->only(['index', 'show']);
-    Route::resource('books', BookController::class)->middleware(['auth'])->only(['index', 'show']);
+Route::resource('books', BookController::class)->middleware(['auth'])->only(['index', 'show']);
 Route::resource('authors', AuthorController::class)->middleware(['auth'])->only(['index', 'show']);
 
 Route::name('admin.')->prefix('admin')->middleware('auth')->group(function ()

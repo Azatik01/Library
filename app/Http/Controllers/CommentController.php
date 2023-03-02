@@ -18,8 +18,6 @@ class CommentController extends Controller
             'description' => 'required|min:5'
         ]);
         $comment = new Comment();
-       // $this->authorize('create-comment', $comment);
-//        $comment->author = $request->user()->name;
         $comment->rating = $request->input('rating');
         $comment->description = $request->input('description');
         $comment->book_id = $book->id;

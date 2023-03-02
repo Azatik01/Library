@@ -14,7 +14,7 @@
             <div class="form-group mt-3">
                 <div class="custom-file ">
                     <label class="custom-file-label form-control" for="customFile">Добавить картинку</label>
-                    <input type="file" class="custom-file-input" id="customFile" name="picture">
+                    <input type="file" multiple class="custom-file-input" id="customFile" name="picture[]">
                     @error('picture')
                     <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
